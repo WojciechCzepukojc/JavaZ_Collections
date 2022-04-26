@@ -6,6 +6,8 @@ public class DynamicArrayMain {
         array.add(10);
         array.add(20);
         array.add(30);
+        array.add(40);
+        array.add(50);
         array.print();
     }
 }
