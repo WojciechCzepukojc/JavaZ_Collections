@@ -26,5 +26,8 @@ public class BookMain {
         System.out.println(b1.compareTo(b2));           //liczba ujemna  bo b1 mnijsze od b2
         System.out.println(b2.compareTo(b3));           //liczba dodatnia bo b2 większe od b3
 
+        BookComparator bookComparator = new BookComparator();
+        System.out.println(bookComparator.compare(b1,b3));
+
     }
 }
