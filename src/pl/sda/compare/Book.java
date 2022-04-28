@@ -58,4 +58,13 @@ public class Book implements Comparable<Book> {
         return title.compareTo(o.title);        //sortowanie od a do z
         //return o.title.compareTo(title);        //sortowanie od z do a
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", isbn=" + isbn +
+                '}';
+    }
 }
