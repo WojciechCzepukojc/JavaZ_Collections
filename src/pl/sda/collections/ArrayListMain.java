@@ -14,6 +14,8 @@ public class ArrayListMain {
         arrayList.add(6);
         arrayList.add(0,100);
 
+
+
         System.out.println(arrayList.size());
         System.out.println(arrayList.contains(5));
 
