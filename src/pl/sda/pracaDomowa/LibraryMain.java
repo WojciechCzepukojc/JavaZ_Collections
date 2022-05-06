@@ -8,10 +8,7 @@ public class LibraryMain {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Wybierz odpowiednią funkcjonalność: 1 - Dodawanie nowej książki 2 - Usunięcie książki 3 - wyświetlenie książki po autorze 4 - wyświetlenie " +
-                "książki po tytule 5 - wyświetlenie wszystkich książek 6 - koniec " );
-        int menu = scanner.nextInt();
-
+        int menu;
 
         Book b1 = new Book("Henryk_Sienkiewicz", "Potop", 2587);
         Book b2 = new Book("Andrzej_Sapkowski", "Sezon_Burz", 6594);
@@ -25,68 +22,84 @@ public class LibraryMain {
         books.add(b3);
         books.add(b4);
 
-        switch (menu){
-            case 1 :
+        do {
+            System.out.println("Wybierz odpowiednią funkcjonalność: 1 - Dodawanie nowej książki 2 - Usunięcie książki 3 - wyświetlenie książki po autorze 4 - wyświetlenie " +
+                    "książki po tytule 5 - wyświetlenie wszystkich książek 6 - koniec " );
+
+            menu = scanner.nextInt();
 
 
-                System.out.println("Podaj autora");
-                String a = scanner.next();
+            switch (menu){
+                case 1 :
 
-                System.out.println("Podaj tytuł");
-                String t = scanner.next();
+                    System.out.println("Podaj autora");
+                    String a = scanner.next();
+
+                    System.out.println("Podaj tytuł");
+                    String t = scanner.next();
 
 
-                System.out.println("Podaj numer ISBN");
-                int i = scanner.nextInt();
+                    System.out.println("Podaj numer ISBN");
+                    int i = scanner.nextInt();
 
-                Book b5 = new Book(a, t, i);
-                break;
+                    Book b5 = new Book(a, t, i);
+                    books.add(b5);
 
-            case 2:
+                    break;
 
-                System.out.println("Podaj ISBN książki którą chcesz usunąć");
-                int isbn = scanner.nextInt();
-                for (Book b : books){
-                    if (b.getISBN() == isbn){
-                        books.remove(b);
-                        System.out.println("książka usunięta");
+                case 2:
+
+                    System.out.println("Podaj ISBN książki którą chcesz usunąć");
+                    int isbn = scanner.nextInt();
+                    for (Book b : books){
+                        if (b.getISBN() == isbn){
+                            books.remove(b);
+                            System.out.println("książka usunięta");
+                        }
+
                     }
+                    break;
 
-                }
-                break;
-
-            case 3:
-                System.out.println("Podaj autora");
-                String author = scanner.next();
-                for ( Book b : books){
-                if (author.equals(b.getAuthor())) {
-                    System.out.println(b.getAuthor() + " " + b.getTitle() + " " + b.getISBN());
-                }
-                }
-                break;
-
-
-            case 4:
-                System.out.println("Podaj tytuł");
-                String title = scanner.next();
-                for (Book b : books){
-                    if (title.equals(b.getTitle())){
-                        System.out.println(b.getAuthor() + " " + b.getTitle() + " " + b.getISBN());
+                case 3:
+                    System.out.println("Podaj autora");
+                    String author = scanner.next();
+                    for ( Book b : books){
+                        if (author.equals(b.getAuthor())) {
+                            System.out.println(b.getAuthor() + " " + b.getTitle() + " " + b.getISBN());
+                        }
                     }
-                }
-                break;
-
-            case 5:
-                Collections.sort(books, new Compare());
-                for (Book b : books ){
-                    System.out.println(b.getISBN() + " " + b.getAuthor() + " " + b.getTitle());
+                    break;
 
 
-                }
+                case 4:
+                    System.out.println("Podaj tytuł");
+                    String title = scanner.next();
+                    for (Book b : books){
+                        if (title.equals(b.getTitle())){
+                            System.out.println(b.getAuthor() + " " + b.getTitle() + " " + b.getISBN());
+                        }
+                    }
+                    break;
+
+                case 5:
+                    Collections.sort(books, new Compare());
+                    for (Book b : books ){
+                        System.out.println("Nr. ISBN: " + b.getISBN() + " Autor: " + b.getAuthor() + " Tytuł:  " + b.getTitle());
+                    }
+                    break;
+
+                case 6:
+                    System.out.println("Koniec pracy");
+                    break;
+
+                default:
+                    System.out.println("Błędne polecenie");
+                    break;
 
 
 
             }
+        }while (menu != 6);
 
 
         }
