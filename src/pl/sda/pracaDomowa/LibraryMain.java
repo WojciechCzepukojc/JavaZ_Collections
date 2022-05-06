@@ -13,10 +13,10 @@ public class LibraryMain {
         int menu = scanner.nextInt();
 
 
-        Book b1 = new Book("Henryk_Sienkiewicz", "Potop", "2587");
-        Book b2 = new Book("Andrzej_Sapkowski", "Sezon_Burz", "6594");
-        Book b3 = new Book("Michaił_Bulhakow", "Mistrz_i_Małgorzata", "4756");
-        Book b4 = new Book("Władysław_Reymont", "Chłopi", "8542");
+        Book b1 = new Book("Henryk_Sienkiewicz", "Potop", 2587);
+        Book b2 = new Book("Andrzej_Sapkowski", "Sezon_Burz", 6594);
+        Book b3 = new Book("Michaił_Bulhakow", "Mistrz_i_Małgorzata", 4756);
+        Book b4 = new Book("Władysław_Reymont", "Chłopi", 8542);
 
 
         LinkedList<Book> books = new LinkedList<>();
@@ -37,7 +37,7 @@ public class LibraryMain {
 
 
                 System.out.println("Podaj numer ISBN");
-                String i = scanner.next();
+                int i = scanner.nextInt();
 
                 Book b5 = new Book(a, t, i);
                 break;
@@ -45,9 +45,9 @@ public class LibraryMain {
             case 2:
 
                 System.out.println("Podaj ISBN książki którą chcesz usunąć");
-                String isbn = scanner.next();
+                int isbn = scanner.nextInt();
                 for (Book b : books){
-                    if (b.getISBN().equals(isbn)){
+                    if (b.getISBN() == isbn){
                         books.remove(b);
                         System.out.println("książka usunięta");
                     }
@@ -77,7 +77,9 @@ public class LibraryMain {
                 break;
 
             case 5:
-                for (Book b : books){
+                Collections.sort(books, new Compare());
+                for (Book b : books ){
+                    System.out.println(b.getISBN() + " " + b.getAuthor() + " " + b.getTitle());
 
 
                 }

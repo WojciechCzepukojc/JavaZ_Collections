@@ -4,9 +4,9 @@ public class Book {
 
     private String author;
     private String title;
-    private String ISBN;
+    private int ISBN;
 
-    public Book(String author, String title, String ISBN) {
+    public Book(String author, String title, int ISBN) {
         this.author = author;
         this.title = title;
         this.ISBN = ISBN;
@@ -28,11 +28,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getISBN() {
+    public int getISBN() {
         return ISBN;
     }
 
-    public void setISBN(String ISBN) {
+    public void setISBN(int ISBN) {
         this.ISBN = ISBN;
     }
 }
