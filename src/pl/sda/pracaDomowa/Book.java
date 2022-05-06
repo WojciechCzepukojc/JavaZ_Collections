@@ -1,16 +1,22 @@
 package pl.sda.pracaDomowa;
 
+import java.time.LocalDate;
+
 public class Book {
 
     private String author;
     private String title;
     private int ISBN;
 
+
     public Book(String author, String title, int ISBN) {
         this.author = author;
         this.title = title;
         this.ISBN = ISBN;
+
     }
+
+
 
     public String getAuthor() {
         return author;
@@ -35,4 +41,8 @@ public class Book {
     public void setISBN(int ISBN) {
         this.ISBN = ISBN;
     }
+
+
+
+
 }

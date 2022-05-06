@@ -1,5 +1,6 @@
 package pl.sda.pracaDomowa;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class LibraryMain {
@@ -84,7 +85,7 @@ public class LibraryMain {
                 case 5:
                     Collections.sort(books, new Compare());
                     for (Book b : books ){
-                        System.out.println("Nr. ISBN: " + b.getISBN() + " Autor: " + b.getAuthor() + " Tytuł:  " + b.getTitle());
+                        System.out.println("Nr. ISBN: " + b.getISBN() + " Autor: " + b.getAuthor() + " Tytuł: " + b.getTitle());
                     }
                     break;
 
