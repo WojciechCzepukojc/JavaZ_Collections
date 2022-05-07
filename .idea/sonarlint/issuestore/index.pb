@@ -13,3 +13,5 @@ S
 #src/pl/sda/collections/MapMain.java,d\2\d23d5ca0a06a4d918e33c212cd1cf3160865314e
 Y
 )src/pl/sda/collections/ArrayListMain.java,0\0\006ae0edcd0287e65005f61a22ee41ed9059ea60
+Z
+*src/pl/sda/collections/LinkedListMain.java,9\f\9f57a267b9ae8baf5a05137ce9e6a2f466c6cf03
