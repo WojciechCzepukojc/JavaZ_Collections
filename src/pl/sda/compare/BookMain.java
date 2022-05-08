@@ -1,12 +1,14 @@
 package pl.sda.compare;
 
+import java.time.LocalDate;
+
 public class BookMain {
     public static void main(String[] args) {
 
 
-        Book b1 = new Book("Ognoiem i mieczem", "Henryk Sienkiewicz", 12586);
-        Book b2 = new Book("Pan Tadeusz", "Adam Mickiewicz", 24856);
-        Book b3 = new Book("Balladyna", "Juliusz słowacki", 25886);
+        Book b1 = new Book("Ognoiem i mieczem", "Henryk Sienkiewicz", 12586, LocalDate.now().minusYears(100));
+        Book b2 = new Book("Pan Tadeusz", "Adam Mickiewicz", 24856, LocalDate.now().minusYears(100));
+        Book b3 = new Book("Balladyna", "Juliusz słowacki", 25886, LocalDate.now().minusYears(100));
 
         System.out.println(b1.equals(b1));
         System.out.println(b2.equals(b1));

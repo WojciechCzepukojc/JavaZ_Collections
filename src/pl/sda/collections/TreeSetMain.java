@@ -2,6 +2,7 @@ package pl.sda.collections;
 
 import pl.sda.compare.Book;
 
+import java.time.LocalDate;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -53,9 +54,9 @@ public class TreeSetMain {
 
         System.out.println();
         TreeSet<Book> books = new TreeSet<Book>();
-        Book b1 = new Book("Ogniem i mieczem", "Henryk Sienkiewicz", 12586);
-        Book b2 = new Book("Pan Tadeusz", "Adam Mickiewicz", 24856);
-        Book b3 = new Book("Balladyna", "Juliusz Słowacki", 25886);
+        Book b1 = new Book("Ogniem i mieczem", "Henryk Sienkiewicz", 12586, LocalDate.now().minusYears(100));
+        Book b2 = new Book("Pan Tadeusz", "Adam Mickiewicz", 24856, LocalDate.now().minusYears(100));
+        Book b3 = new Book("Balladyna", "Juliusz Słowacki", 25886, LocalDate.now().minusYears(100));
 
         books.add(b1);
         books.add(b2);

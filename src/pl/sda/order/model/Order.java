@@ -61,12 +61,19 @@ public class Order {
     }
 
     public int size(){
-            int sum = 0;
+//            int sum = 0;
+//
+//        for (List<Product> products : productMap.values()) {
+//            sum += products.size();
+//        }
+//            return sum;
 
-        for (List<Product> products : productMap.values()) {
-            sum += products.size();
-        }
-            return sum;
+        return productMap.values()
+                .stream()
+                .map(list -> list.size())
+                .reduce((s1, s2) -> s1+s2 )
+                .orElse(0);
+
     }
 
     public boolean removeProductByID (Integer id) {

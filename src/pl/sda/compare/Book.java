@@ -1,5 +1,6 @@
 package pl.sda.compare;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Book implements Comparable<Book> {
@@ -10,10 +11,13 @@ public class Book implements Comparable<Book> {
 
     private int isbn;
 
-    public Book(String title, String author, int isbn) {
+    private LocalDate releaseDate;
+
+    public Book(String title, String author, int isbn, LocalDate releaseDate) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
+        this.releaseDate = releaseDate;
     }
 
     public String getTitle() {
@@ -38,6 +42,10 @@ public class Book implements Comparable<Book> {
 
     public void setIsbn(int isbn) {
         this.isbn = isbn;
+    }
+
+    public LocalDate getReleaseDate() {
+        return releaseDate;
     }
 
     @Override
